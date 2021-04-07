@@ -7,6 +7,8 @@ an excellent book by Bob Nystrom.
 This implementation of `jlox` follows faithfully the canonical interpreter implementation
 in Java as detailed in the book.
 
+_NOTE: this implementation is a work-in-progress!_
+
 ## Lox Lexical Grammar ##
 
     NUMBER          → DIGIT+ ( "." DIGIT+ )? ;
