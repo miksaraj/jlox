@@ -4,8 +4,8 @@ My first foray into PLD, and understanding how actual interpreters and compilers
 following [Crafting Interpreters](http://craftinginterpreters.com/ "Crafting Interpreters"),
 an excellent book by Bob Nystrom.
 
-This implementation of `jlox` follows faithfully the canonical interpreter implementation
-in Java as detailed in the book.
+This implementation of `jlox` follows faithfully the canonical tree-walk interpreter
+implementation in Java as detailed in the book.
 
 ## Lox Lexical Grammar ##
 
