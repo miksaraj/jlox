@@ -135,7 +135,7 @@ class Parser {
     Expr value = null;
     if (!check(SEMICOLON)) value = expression();
 
-    consume(SEMICOLON. "Expect ';' after return value.");
+    consume(SEMICOLON, "Expect ';' after return value.");
     return new Stmt.Return(keyword, value);
   }
 
@@ -177,7 +177,7 @@ class Parser {
         }
 
         parameters.add(
-          consume.(IDENTIFIER, "Expect parameter name.")
+          consume(IDENTIFIER, "Expect parameter name.")
         );
       } while (match(COMMA));
     }
@@ -343,6 +343,8 @@ class Parser {
     if (match(NUMBER, STRING)) {
       return new Expr.Literal(previous().literal);
     }
+
+    if (match(THIS)) return new Expr.This(previous());
 
     if (match(IDENTIFIER)) {
       return new Expr.Variable(previous());
