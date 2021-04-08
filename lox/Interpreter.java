@@ -331,7 +331,7 @@ class Interpreter implements Expr.Visitor<Object>,
         }
         throw new RuntimeError(
           expr.operator,
-          "Operands must be two numbers or thow strings."
+          "Operands must be two numbers or two strings."
           );
       case SLASH:
         checkNumberOperands(expr.operator, left, right);
