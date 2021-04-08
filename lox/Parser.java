@@ -43,6 +43,8 @@ class Parser {
 
   private Stmt classDeclaration() {
     Token name = consume(IDENTIFIER, "Expect class name.");
+
+    Expr.Variable superclass = null;
     if (match(LESS)) {
       consume(IDENTIFIER, "Expect superclass name.");
       superclass = new Expr.Variable(previous());
@@ -71,7 +73,7 @@ class Parser {
   }
 
   private Stmt forStatement() {
-    consume(LEFT_PAREN, "Expect '(' after 'for'."):
+    consume(LEFT_PAREN, "Expect '(' after 'for'.");
 
     Stmt initializer;
     if (match(SEMICOLON)) {

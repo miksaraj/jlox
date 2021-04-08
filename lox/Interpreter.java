@@ -179,7 +179,7 @@ class Interpreter implements Expr.Visitor<Object>,
     try {
       this.environment = environment;
 
-      for (Stmt statement : statement) {
+      for (Stmt statement : statements) {
         execute(statement);
       }
     } finally {
@@ -246,7 +246,7 @@ class Interpreter implements Expr.Visitor<Object>,
     if (isTruthy(evaluate(stmt.condition))) {
       execute(stmt.thenBranch);
     } else if (stmt.elseBranch != null) {
-      execute.elseBranch;
+      execute(stmt.elseBranch);
     }
     return null;
   }
@@ -260,7 +260,7 @@ class Interpreter implements Expr.Visitor<Object>,
 
   @Override
   public Void visitReturnStmt(Stmt.Return stmt) {
-    Object.value = null;
+    Object value = null;
     if (stmt.value != null) value = evaluate(stmt.value);
 
     throw new Return(value);
@@ -268,7 +268,7 @@ class Interpreter implements Expr.Visitor<Object>,
 
   @Override
   public Void visitVarStmt(Stmt.Var stmt) {
-    Object.value = null;
+    Object value = null;
     if (stmt.initializer != null) {
       value = evaluate(stmt.initializer);
     }
@@ -286,7 +286,7 @@ class Interpreter implements Expr.Visitor<Object>,
   }
 
   @Override
-  public Object visitAssignExpr(Exr.Assign expr) {
+  public Object visitAssignExpr(Expr.Assign expr) {
     Object value = evaluate(expr.value);
     
     Integer distance = locals.get(expr);

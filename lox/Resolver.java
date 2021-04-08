@@ -9,7 +9,7 @@ class Resolver implements Expr.Visitor<Void>, Stmt.Visitor<Void> {
   private final Interpreter interpreter;
   private final Stack<Map<String, Boolean>> scopes = new Stack<>();
   private FunctionType currentFunction = FunctionType.NONE;
-  private ClassType currentClass = ClassType.NONE
+  private ClassType currentClass = ClassType.NONE;
 
   Resolver(Interpreter interpreter) {
     this.interpreter = interpreter;
@@ -58,7 +58,7 @@ class Resolver implements Expr.Visitor<Void>, Stmt.Visitor<Void> {
       resolve(stmt.superclass);
       
       beginScope();
-      scopes.peek().put("super", true)
+      scopes.peek().put("super", true);
     }
 
     beginScope();
@@ -202,7 +202,7 @@ class Resolver implements Expr.Visitor<Void>, Stmt.Visitor<Void> {
     } else if (currentClass != ClassType.SUBCLASS) {
       Lox.error(expr.keyword, "Can't use 'super' in a class with no superclass.");
     }
-    
+
     resolveLocal(expr, expr.keyword);
     return null;
   }
@@ -256,7 +256,7 @@ class Resolver implements Expr.Visitor<Void>, Stmt.Visitor<Void> {
     currentFunction = enclosingFunction;
   }
 
-  private void beingScope() {
+  private void beginScope() {
     scopes.push(new HashMap<String, Boolean>());
   }
 
