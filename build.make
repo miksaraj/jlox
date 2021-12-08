@@ -3,7 +3,7 @@
 
 BUILD_DIR := build
 
-SOURCES := $(wildcard $(PACKAGE)/*.java)
+SOURCES := $(wildcard com/miksaraj/$(PACKAGE)/*.java)
 CLASSES := $(addprefix $(BUILD_DIR)/, $(SOURCES:.java=.class))
 
 JAVA_OPTIONS := -Werror

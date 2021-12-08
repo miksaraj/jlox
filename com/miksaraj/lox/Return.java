@@ -1,4 +1,4 @@
-package lox;
+package com.miksaraj.lox;
 
 class Return extends RuntimeException {
   final Object value;
