@@ -1,10 +1,10 @@
-package com.miksaraj.lox;
+package com.jloxlang.lox;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.miksaraj.lox.TokenType.*;
+import static com.jloxlang.lox.TokenType.*;
 
 class Parser {
   private static class ParseError extends RuntimeException {}

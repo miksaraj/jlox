@@ -1,6 +1,6 @@
-package com.miksaraj.lox;
+package com.jloxlang.lox;
 
-class Token {
+public class Token {
   final TokenType type;
   final String lexeme;
   final Object literal;

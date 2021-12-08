@@ -1,1 +1,1 @@
-Main-Class: com.miksaraj.lox.Lox
+Main-Class: com.jloxlang.lox.Lox

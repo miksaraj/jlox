@@ -1,5 +1,5 @@
 // Examples of functions and closures.
-// Functions are first-class in com.miksaraj.lox, and as such
+// Functions are first-class in com.jloxlang.lox, and as such
 // can be passed around in variables to other
 // functions and returned.
 

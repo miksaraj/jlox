@@ -1,4 +1,4 @@
-package com.miksaraj.tool;
+package com.jloxlang.tool;
 
 import java.io.IOException;
 import java.io.PrintWriter;
